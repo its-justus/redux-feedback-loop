@@ -1,5 +1,35 @@
+## Data Structure
+[x] - Redux store
+	[x] - formReducer state={}
+		[x] - state.feelings
+		[x] - state.understanding
+		[x] - state.support
+		[x] - state.comments
+		[x] - action.type="UPDATE_FORM"
+			[x] - action.payload.feedback
+		[x] - action.type="RESET_FORM"
+	[x] - feedbackReducer state=[] list of feedback objects from server
+		[x] - action.type="UPDATE_FEEDBACK"
+			[x] - action.payload.newFeedbackList
+
+## Routing
+
+[ ] - React-Router
+	[ ] - Router
+		[ ] - Switch
+			[ ] - Route "/" (LandingPage)
+			[ ] - Route "/1" (Feelings)
+			[ ] - Route "/2" (Understanding)
+			[ ] - Route "/3" (Support)
+			[ ] - Route "/4" (Comments)
+			[ ] - Route "/5" (Review)
+			[ ] - Route "/thank-you" (ThankYou)
+			[ ] - Route "/admin-panel" (AdminPanel)
+
 ## Components
 
+[ ] - LandingPage
+	[ ] - Add Feedback button
 [ ] - NumberFeedback
 	[ ] - fieldName
 	[ ] - sequenceNumber
@@ -26,16 +56,7 @@
 	[ ] - Thank you message
 	[ ] - leave new feedback button
 
-## Data Structure
-[ ] - Redux store
-	[ ] - formReducer state={}
-		[ ] - state.feelings
-		[ ] - state.understanding
-		[ ] - state.support
-		[ ] - state.comments
-	[ ] - action.type="UPDATE_FORM"
-		[ ] - action.payload.feedback
-	[ ] - action.type="RESET_FORM"
+
 
 ## Stretch Goals
 [ ] - Update scores
@@ -45,7 +66,7 @@
 	[ ] - TextFeedback conversion
 	[ ] - ReviewFeedback conversion
 	[ ] - ThankYou feedback conversion
-[ ] - AdminDisplay Component
+[ ] - AdminPanel Component
 	[ ] - add feedbackReducer to Redux
 	[ ] - pull data from server and store in reducer
 	[ ] - Title
