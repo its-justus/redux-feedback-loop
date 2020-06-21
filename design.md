@@ -28,8 +28,8 @@
 
 ## Components
 
-[ ] - LandingPage
-	[ ] - Add Feedback button
+[x] - LandingPage
+	[x] - Add Feedback button
 [ ] - NumberFeedback
 	[ ] - fieldName
 	[ ] - sequenceNumber

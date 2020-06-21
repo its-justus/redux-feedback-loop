@@ -9,7 +9,7 @@ class LandingPage extends React.Component {
 
 	render() {
 		return (
-			<div id="LandingPage">
+			<div className="landing-page">
 				<h2>Welcome to the Feedback App!</h2>
 				<button type="button" onClick={this.startFeedback}>Add Feedback</button>
 			</div>

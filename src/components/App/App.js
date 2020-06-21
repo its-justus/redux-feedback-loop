@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import LandingPage from '../LandingPage/LandingPage';
+import NumberFeedback from '../NumberFeedback/NumberFeedback';
 
 class App extends Component {
   render() {
@@ -18,13 +19,13 @@ class App extends Component {
 							<LandingPage />
 						</Route>
 						<Route exact path="/feedback/1">
-							{/* Feelings page */}
+							<NumberFeedback fieldName="feeling" sequenceNumber={1} question="How are you feeling today?"/>
 						</Route>
 						<Route exact path="/feedback/2">
-							{/* Understanding page */}
+						<NumberFeedback fieldName="understanding" sequenceNumber={2} question="How well are you understanding the content?"/>
 						</Route>
 						<Route exact path="/feedback/3">
-							{/* Support page */}
+						<NumberFeedback fieldName="support" sequenceNumber={3} question="How well are you being supported?"/>
 						</Route>
 						<Route exact path="/feedback/4">
 							{/* Comments page */}
