@@ -38,23 +38,23 @@
 		[x] - label
 		[x] - validation
 	[x] - nextButton
-[ ] - TextFeedback
-	[ ] - fieldName
-	[ ] - sequenceNumber
-	[ ] - question
-	[ ] - response (text)
-		[ ] - label
-		[ ] - validation
-	[ ] - nextButton
-[ ] - ReviewFeedback
-	[ ] - sequenceNumber
-	[ ] - map feedback object to text
-		[ ] - fieldName
-		[ ] - response
-	[ ] - submit button
-[ ] - ThankYou
-	[ ] - Thank you message
-	[ ] - leave new feedback button
+[x] - TextFeedback
+	[x] - fieldName
+	[x] - sequenceNumber
+	[x] - question
+	[x] - response (text)
+		[x] - label
+		[x] - validation
+	[x] - nextButton
+[x] - ReviewFeedback
+	[x] - sequenceNumber
+	[x] - map feedback object to text
+		[x] - fieldName
+		[x] - response
+	[x] - submit button
+[x] - ThankYou
+	[x] - Thank you message
+	[x] - leave new feedback button
 
 
 

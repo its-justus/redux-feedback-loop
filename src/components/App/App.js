@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import axios from "axios";
 import "./App.css";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import LandingPage from "../LandingPage/LandingPage";
 import NumberFeedback from "../NumberFeedback/NumberFeedback";
 import TextFeedback from "../TextFeedback/TextFeedback";
 import ReviewFeedback from "../ReviewFeedback/ReviewFeedback";
+import ThankYou from "../ThankYou/ThankYou";
 
 class App extends Component {
   render() {
@@ -52,9 +52,10 @@ class App extends Component {
             </Route>
             <Route exact path="/feedback/5">
               <ReviewFeedback />
-            </Route>S
-            <Route exact path="/feedback/thank-you">
-              {/* Thank you page */}
+            </Route>
+            S
+            <Route exact path="/thank-you">
+              <ThankYou />
             </Route>
             <Route exact path="/admin-panel">
               {/* admin panel page */}

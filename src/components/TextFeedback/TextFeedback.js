@@ -9,11 +9,11 @@ class TextFeedback extends React.Component {
 		- question
 	*/
 
-	// we keep our state entirely in the redux store. more overhead processing but far simpler
+  // handle changes to input, storing them in the Redux store
   handleChange = (event) => {
     const { fieldName, sequenceNumber } = this.props;
-		let value = event.target.value;
-		
+    let value = event.target.value;
+
     this.props.dispatch({
       type: "UPDATE_FORM",
       payload: { [fieldName]: { value: value, sequence: sequenceNumber } },
@@ -28,6 +28,7 @@ class TextFeedback extends React.Component {
     );
   };
 
+  // navigate to the previous page in the sequence
   back = (event) => {
     event.preventDefault();
     // if we are the first page in the sequence, go back to root
@@ -43,11 +44,8 @@ class TextFeedback extends React.Component {
 
   render() {
     const { fieldName, sequenceNumber, question, form } = this.props;
-    const fieldValue = form[fieldName]?.value || '';
-    if (!fieldName) throw new ReferenceError("Missing required prop fieldName");
-    if (!sequenceNumber)
-      throw new ReferenceError("Missing required prop sequenceNumber");
-    if (!question) throw new ReferenceError("Missing required prop question");
+    const fieldValue = form[fieldName]?.value || "";
+
     return (
       <div className="number-feedback">
         <h2>{question}</h2>

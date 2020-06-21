@@ -9,7 +9,7 @@ class NumberFeedback extends React.Component {
 		- question
 	*/
 
-	// we keep our state entirely in the redux store. more overhead processing but far simpler
+  // we keep our state entirely in the redux store. more overhead processing but far simpler
   handleChange = (event) => {
     const { fieldName, sequenceNumber } = this.props;
     let value = event.target.value;
@@ -35,9 +35,10 @@ class NumberFeedback extends React.Component {
     );
   };
 
+  // navigate to the previous page
   back = (event) => {
     event.preventDefault();
-    // if we are the first page in the sequence, go back to root
+    // if we are the first page in the sequence, go back to the landing page
     if (this.props.sequenceNumber === 1) {
       this.props.history.push(`/`);
     } else {
@@ -50,11 +51,8 @@ class NumberFeedback extends React.Component {
 
   render() {
     const { fieldName, sequenceNumber, question, form } = this.props;
-    const fieldValue = form[fieldName]?.value || '';
-    if (!fieldName) throw new ReferenceError("Missing required prop fieldName");
-    if (!sequenceNumber)
-      throw new ReferenceError("Missing required prop sequenceNumber");
-    if (!question) throw new ReferenceError("Missing required prop question");
+    const fieldValue = form[fieldName]?.value || "";
+
     return (
       <div className="number-feedback">
         <h2>{question}</h2>
