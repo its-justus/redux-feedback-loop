@@ -66,10 +66,9 @@ class TextFeedback extends React.Component {
       </div>
     ); // end return
   } // end render
-} // end NumberFeedback
+} // end TextFeedback
 
 const mapStateToProps = (state) => {
-  console.log("NumberFeedback.mapStateToProps()", state);
   return { form: state.form };
 };
 

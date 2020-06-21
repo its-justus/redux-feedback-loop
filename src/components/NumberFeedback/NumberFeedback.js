@@ -80,7 +80,6 @@ class NumberFeedback extends React.Component {
 } // end NumberFeedback
 
 const mapStateToProps = (state) => {
-  console.log("NumberFeedback.mapStateToProps()", state);
   return { form: state.form };
 };
 

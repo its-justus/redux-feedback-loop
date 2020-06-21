@@ -5,6 +5,7 @@ import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import LandingPage from "../LandingPage/LandingPage";
 import NumberFeedback from "../NumberFeedback/NumberFeedback";
 import TextFeedback from "../TextFeedback/TextFeedback";
+import ReviewFeedback from "../ReviewFeedback/ReviewFeedback";
 
 class App extends Component {
   render() {
@@ -50,7 +51,7 @@ class App extends Component {
               />
             </Route>
             <Route exact path="/feedback/5">
-              {/* Review page */}
+              <ReviewFeedback />
             </Route>S
             <Route exact path="/feedback/thank-you">
               {/* Thank you page */}
