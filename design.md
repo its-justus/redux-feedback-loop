@@ -15,16 +15,16 @@
 ## Routing
 
 [ ] - React-Router
-	[ ] - Router
-		[ ] - Switch
-			[ ] - Route "/" (LandingPage)
-			[ ] - Route "/1" (Feelings)
-			[ ] - Route "/2" (Understanding)
-			[ ] - Route "/3" (Support)
-			[ ] - Route "/4" (Comments)
-			[ ] - Route "/5" (Review)
-			[ ] - Route "/thank-you" (ThankYou)
-			[ ] - Route "/admin-panel" (AdminPanel)
+	[x] - Router
+		[x] - Switch
+			[x] - Route "/" (LandingPage)
+			[x] - Route "/1" (Feelings)
+			[x] - Route "/2" (Understanding)
+			[x] - Route "/3" (Support)
+			[x] - Route "/4" (Comments)
+			[x] - Route "/5" (Review)
+			[x] - Route "/thank-you" (ThankYou)
+			[x] - Route "/admin-panel" (AdminPanel)
 
 ## Components
 

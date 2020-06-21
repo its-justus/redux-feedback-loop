@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 
 class App extends Component {
   render() {
@@ -10,6 +11,34 @@ class App extends Component {
           <h1 className="App-title">Feedback!</h1>
           <h4><i>Don't forget it!</i></h4>
         </header>
+				<Router>
+					<Switch>
+						<Route exact path="/">
+							{/* landing page */}
+						</Route>
+						<Route exact path="/1">
+							{/* Feelings page */}
+						</Route>
+						<Route exact path="/2">
+							{/* Understanding page */}
+						</Route>
+						<Route exact path="/3">
+							{/* Support page */}
+						</Route>
+						<Route exact path="/4">
+							{/* Comments page */}
+						</Route>
+						<Route exact path="/5">
+							{/* Review page */}
+						</Route>
+						<Route exact path="/thank-you">
+							{/* Thank you page */}
+						</Route>
+						<Route exact path="/admin-panel">
+							{/* admin panel page */}
+						</Route>
+					</Switch>
+				</Router>
         <br/>
       </div>
     );
