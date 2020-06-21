@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import './App.css';
-import { HashRouter as Router, Switch, Route } from 'react-router-dom';
-import LandingPage from '../LandingPage/LandingPage';
-import NumberFeedback from '../NumberFeedback/NumberFeedback';
+import React, { Component } from "react";
+import axios from "axios";
+import "./App.css";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import LandingPage from "../LandingPage/LandingPage";
+import NumberFeedback from "../NumberFeedback/NumberFeedback";
+import TextFeedback from "../TextFeedback/TextFeedback";
 
 class App extends Component {
   render() {
@@ -11,37 +12,55 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Feedback!</h1>
-          <h4><i>Don't forget it!</i></h4>
+          <h4>
+            <i>Don't forget it!</i>
+          </h4>
         </header>
-				<Router>
-					<Switch>
-						<Route exact path="/">
-							<LandingPage />
-						</Route>
-						<Route exact path="/feedback/1">
-							<NumberFeedback fieldName="feeling" sequenceNumber={1} question="How are you feeling today?"/>
-						</Route>
-						<Route exact path="/feedback/2">
-						<NumberFeedback fieldName="understanding" sequenceNumber={2} question="How well are you understanding the content?"/>
-						</Route>
-						<Route exact path="/feedback/3">
-						<NumberFeedback fieldName="support" sequenceNumber={3} question="How well are you being supported?"/>
-						</Route>
-						<Route exact path="/feedback/4">
-							{/* Comments page */}
-						</Route>
-						<Route exact path="/feedback/5">
-							{/* Review page */}
-						</Route>
-						<Route exact path="/feedback/thank-you">
-							{/* Thank you page */}
-						</Route>
-						<Route exact path="/admin-panel">
-							{/* admin panel page */}
-						</Route>
-					</Switch>
-				</Router>
-        <br/>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <LandingPage />
+            </Route>
+            <Route exact path="/feedback/1">
+              <NumberFeedback
+                fieldName="feeling"
+                sequenceNumber={1}
+                question="How are you feeling today?"
+              />
+            </Route>
+            <Route exact path="/feedback/2">
+              <NumberFeedback
+                fieldName="understanding"
+                sequenceNumber={2}
+                question="How well are you understanding the content?"
+              />
+            </Route>
+            <Route exact path="/feedback/3">
+              <NumberFeedback
+                fieldName="support"
+                sequenceNumber={3}
+                question="How well are you being supported?"
+              />
+            </Route>
+            <Route exact path="/feedback/4">
+              <TextFeedback
+                fieldName="comments"
+                sequenceNumber={4}
+                question="Any comments you would like to add?"
+              />
+            </Route>
+            <Route exact path="/feedback/5">
+              {/* Review page */}
+            </Route>S
+            <Route exact path="/feedback/thank-you">
+              {/* Thank you page */}
+            </Route>
+            <Route exact path="/admin-panel">
+              {/* admin panel page */}
+            </Route>
+          </Switch>
+        </Router>
+        <br />
       </div>
     );
   }

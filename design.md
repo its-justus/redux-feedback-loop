@@ -30,14 +30,14 @@
 
 [x] - LandingPage
 	[x] - Add Feedback button
-[ ] - NumberFeedback
-	[ ] - fieldName
-	[ ] - sequenceNumber
-	[ ] - question
-	[ ] - response (number)
-		[ ] - label
-		[ ] - validation
-	[ ] - nextButton
+[x] - NumberFeedback
+	[x] - fieldName
+	[x] - sequenceNumber
+	[x] - question
+	[x] - response (number)
+		[x] - label
+		[x] - validation
+	[x] - nextButton
 [ ] - TextFeedback
 	[ ] - fieldName
 	[ ] - sequenceNumber
