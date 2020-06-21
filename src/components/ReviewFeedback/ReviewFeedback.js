@@ -6,12 +6,26 @@ import axios from "axios";
 class ReviewFeedback extends React.Component {
   // navigate to the next page in the sequence
   submitFeedback = () => {
-		// add axios call here and put the following in the promise
-		// reset form
-		this.props.dispatch({type: "RESET_FORM"});
-		// navigate back to the thank you page
-		this.props.history.push("/thank-you");
-	}
+    // construct the data object for our axios request
+		const data = {};
+		const {form} = this.props;
+    for (let key in form) {
+      data[key] = form[key].value;
+    }
+
+    // axios request
+		axios.post("/api/feedback", data)
+			.then((response) => {
+      // reset form
+      this.props.dispatch({ type: "RESET_FORM" });
+      // navigate back to the thank you page
+      this.props.history.push("/thank-you");
+		})
+		.catch((error) => {
+			console.log(error);
+			alert("Server error, please try again later.");
+		})
+  };
 
   back = (event) => {
     event.preventDefault();
@@ -43,10 +57,16 @@ class ReviewFeedback extends React.Component {
     return (
       <div className="number-feedback">
         <h2>Review Your Feedback</h2>
-				{feedbackArray.map((field, index) => {
-					return <h5 key={`feedback-${index}`}>{field.field}: {field.value}</h5>
-				})}
-				<button type="button" onClick={this.submitFeedback}>Submit</button>
+        {feedbackArray.map((field, index) => {
+          return (
+            <h5 key={`feedback-${index}`}>
+              {field.field}: {field.value}
+            </h5>
+          );
+        })}
+        <button type="button" onClick={this.submitFeedback}>
+          Submit
+        </button>
       </div>
     ); // end return
   } // end render
