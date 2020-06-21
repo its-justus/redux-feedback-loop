@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+import LandingPage from '../LandingPage/LandingPage';
 
 class App extends Component {
   render() {
@@ -14,24 +15,24 @@ class App extends Component {
 				<Router>
 					<Switch>
 						<Route exact path="/">
-							{/* landing page */}
+							<LandingPage />
 						</Route>
-						<Route exact path="/1">
+						<Route exact path="/feedback/1">
 							{/* Feelings page */}
 						</Route>
-						<Route exact path="/2">
+						<Route exact path="/feedback/2">
 							{/* Understanding page */}
 						</Route>
-						<Route exact path="/3">
+						<Route exact path="/feedback/3">
 							{/* Support page */}
 						</Route>
-						<Route exact path="/4">
+						<Route exact path="/feedback/4">
 							{/* Comments page */}
 						</Route>
-						<Route exact path="/5">
+						<Route exact path="/feedback/5">
 							{/* Review page */}
 						</Route>
-						<Route exact path="/thank-you">
+						<Route exact path="/feedback/thank-you">
 							{/* Thank you page */}
 						</Route>
 						<Route exact path="/admin-panel">
