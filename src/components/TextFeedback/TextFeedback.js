@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
+import { Grid, Button, TextField } from "@material-ui/core";
 
 class TextFeedback extends React.Component {
   /* Required Props
@@ -47,21 +48,44 @@ class TextFeedback extends React.Component {
     const fieldValue = form[fieldName]?.value || "";
 
     return (
-      <div className="number-feedback">
+      <Grid item xs={6} className="number-feedback">
+				<Grid item xs={12}>
         <h2>{question}</h2>
+				</Grid>
         <form onSubmit={this.next}>
-          <input
-            required
+				<Grid item xs={12}>
+          <TextField
+						multiline
+						fullWidth
+						rows={4}
+						variant="filled"
+						required
+						label={fieldName.charAt(0).toUpperCase() + fieldName.slice(1)}
             onChange={this.handleChange}
             value={fieldValue}
             type="text"
           />
-          <button type="button" onClick={this.back}>
-            Previous
-          </button>
-          <button type="submit">Next</button>
+					</Grid>
+					<br/>
+          <Grid container justify="space-evenly" spacing={2}>
+            <Grid item xs={3}>
+              <Button
+                type="button"
+                variant="contained"
+                color="primary"
+                onClick={this.back}
+              >
+                Previous
+              </Button>
+            </Grid>
+            <Grid item xs={3}>
+              <Button type="submit" variant="contained" color="primary">
+                Next
+              </Button>
+            </Grid>
+          </Grid>
         </form>
-      </div>
+      </Grid>
     ); // end return
   } // end render
 } // end TextFeedback

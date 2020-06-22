@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
-import { Grid, Button, TextField, Slider } from "@material-ui/core";
+import { Grid, Button, Slider } from "@material-ui/core";
 
 class NumberFeedback extends React.Component {
   /* Required Props
@@ -9,6 +9,48 @@ class NumberFeedback extends React.Component {
 		- sequenceNumber
 		- question
 	*/
+	constructor(props) {
+		super(props);
+		this.props = props;
+		this.marks = [];
+		for (let i = 1; i <= 5; i++) {
+			this.marks.push({ value: i, label: i });
+		}
+	}
+
+	// componentDidUpdate and componentWillUnmount are required for this particular feedback
+	// form due to redux storing being tied to the slider onChange function which is not triggered
+	// in the case a user does not move the slider at all. 
+
+	// componentDidUpdate handles cases where the user did not change the slider at all
+	// and we moved to another NumberFeedback page. Navigating between two instances
+	// of a class does NOT trigger componentWillUnmount, so we need to use componentDidUpdate
+	componentDidUpdate = (prevProps, prevState) => {
+		// if the previous fieldname and the current field name don't match AND we didn't store our value in Redux
+		if(prevProps.fieldName !== this.props.fieldName && !prevProps.form[prevProps.fieldName]){
+			// store the default value in redux
+			const { fieldName, sequenceNumber } = prevProps;
+			this.props.dispatch({
+				type: "UPDATE_FORM",
+				payload: { [fieldName]: { value: 3, sequence: sequenceNumber } },
+			});
+		}
+	}
+
+	// componentWillUnmount handles cases where the user did not change the slider and we are
+	// navigating to a different component. Navigating from one component to another does
+	// not trigger componentDidUpdate so we need to use this to send a default value to Redux
+	componentWillUnmount = () => {
+		// if there is no object in form with the current field name
+		if(!this.props.form[this.props.fieldName]){
+			// update the Redux store with the default value
+			const { fieldName, sequenceNumber } = this.props;
+			this.props.dispatch({
+				type: "UPDATE_FORM",
+				payload: { [fieldName]: { value: 3, sequence: sequenceNumber } },
+			});
+		}
+	}
 
   // we keep our state entirely in the redux store. more overhead processing but far simpler
   handleChange = (event, value) => {
@@ -47,10 +89,6 @@ class NumberFeedback extends React.Component {
   render() {
     const { fieldName, question, form } = this.props;
     const fieldValue = form[fieldName]?.value || 3;
-    const marks = [];
-    for (let i = 1; i <= 5; i++) {
-      marks.push({ value: i, label: i });
-    }
 
     return (
       <Grid item xs={6} className="number-feedback">
@@ -68,7 +106,7 @@ class NumberFeedback extends React.Component {
               step={1}
               min={1}
               max={5}
-              marks={marks}
+              marks={this.marks}
             />
           </Grid>
           <br />
