@@ -59,8 +59,8 @@
 
 
 ## Stretch Goals
-[ ] - Update scores
-	[ ] - add back button to feedback components
+[x] - Update scores
+	[x] - add back button to feedback components
 [ ] - Material.ui
 	[ ] - NumberFeedback conversion
 	[ ] - TextFeedback conversion

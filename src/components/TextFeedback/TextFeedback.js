@@ -43,7 +43,7 @@ class TextFeedback extends React.Component {
   };
 
   render() {
-    const { fieldName, sequenceNumber, question, form } = this.props;
+    const { fieldName, question, form } = this.props;
     const fieldValue = form[fieldName]?.value || "";
 
     return (
