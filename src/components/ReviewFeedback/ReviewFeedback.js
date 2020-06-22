@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import axios from "axios";
+import { Grid, Button, List, ListItem, ListItemText } from "@material-ui/core";
 
 class ReviewFeedback extends React.Component {
   // submit feedback to the server and navigate to the thank you page upon success
@@ -57,19 +58,30 @@ class ReviewFeedback extends React.Component {
     feedbackArray.sort((a, b) => a.sequence - b.sequence);
 
     return (
-      <div className="number-feedback">
-        <h2>Review Your Feedback</h2>
-        {feedbackArray.map((field, index) => {
-          return (
-            <h5 key={`feedback-${index}`}>
-              {field.field}: {field.value}
-            </h5>
-          );
-        })}
-        <button type="button" onClick={this.submitFeedback}>
-          Submit
-        </button>
-      </div>
+      <Grid item xs={6} className="number-feedback">
+        <Grid item xs={12}>
+          <h2>Review Your Feedback</h2>
+        </Grid>
+        <Grid item xs={12}>
+					<List>
+            {feedbackArray.map((field, index) => {
+              return (
+                <ListItem key={`rli-${index}`}>
+                  <ListItemText>
+                    {field.field.charAt(0).toUpperCase() + field.field.slice(1)}
+                    : {field.value}
+                  </ListItemText>
+                </ListItem>
+              );
+            })}
+          </List>
+        </Grid>
+        <Grid item xs={12}>
+          <Button type="button" variant="contained" color="primary" onClick={this.submitFeedback}>
+            Submit
+          </Button>
+        </Grid>
+      </Grid>
     ); // end return
   } // end render
 } // end ReviewFeedback
