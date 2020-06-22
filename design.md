@@ -61,11 +61,11 @@
 ## Stretch Goals
 [x] - Update scores
 	[x] - add back button to feedback components
-[ ] - Material.ui
-	[ ] - NumberFeedback conversion
-	[ ] - TextFeedback conversion
-	[ ] - ReviewFeedback conversion
-	[ ] - ThankYou feedback conversion
+[x] - Material.ui
+	[x] - NumberFeedback conversion
+	[x] - TextFeedback conversion
+	[x] - ReviewFeedback conversion
+	[x] - ThankYou feedback conversion
 [ ] - AdminPanel Component
 	[ ] - add feedbackReducer to Redux
 	[ ] - pull data from server and store in reducer
